@@ -1,0 +1,15 @@
+{
+  "name": "mvideos",
+  "version": "1.0.0",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "keywords": [],
+  "author": "DrPanayioths",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "electron": "^33.0.2"
+  }
+}
