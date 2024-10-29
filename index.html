@@ -4,13 +4,22 @@
     <title>MVods</title>
     
     <style>
-        body { position: absolute; top: 0; left: 0; width: 100%; height: 100%; margin: 0; padding: 0; }
+        body { position: absolute; top: 0; left: 0; width: 100%; height: 100%; margin: 0; padding: 0;cursor: none; }
+        #cursor  {
+        position: absolute;
+        background-color: black;
+        border: 3px solid rgb(255, 255, 255);
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        z-index: 100;
+        }
         #videoPlayer { 
-            position: fixed;
+            position: absolute;
             height: 98.5%;
             width: 99.5%;
-            background-color: black;
-            object-fit: contain;
+            background-color: rgb(37, 37, 37);
+            object-fit: cover;
             top: 0.5%;
             left: 0.3%;
             z-index: 1;
@@ -18,25 +27,73 @@
             
         }
         #video_background {
-            position: fixed;
+            position: absolute;
             height: 100%;
             width: 100%;
             background-color: rgb(109, 108, 108);
         }
         #audioPlayer { display: none; }
         #fileInput {
-            position: fixed;
+            position: absolute;
             top: 10px;
             left: 10px;
             z-index: 2;
         }
+        #video_controls {
+            position: absolute;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(5px);
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px;
+            border-radius: 20px;
+            height: 50px;
+            width: 500px;
+            z-index: 2;
+        }
+
+        /* Play Button */
+
+        #play {
+            position: absolute;
+            background-color: transparent;
+            border: none; 
+            top: 50%;
+            transform: translateY(-50%);
+            height: 55px;
+            transition: all 0.3s ease;
+        }
+        #play:hover {
+            cursor: none;
+            height: 58px;
+        }
+
+        /* Stop Button */
+
+        #stopButton {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 100px;
+
+        }
     </style>
 </head>
 <body>
+    <div id="cursor"></div>
     <div id="video_background"></div>
-    <input type="file" id="fileInput" accept="audio/mp3, video/mp4" />
+    <input type="file" id="fileInput" accept="audio/mp3, video/mp4">
     <audio id="audioPlayer" controls></audio>
     <video id="videoPlayer"></video>
     <script src="renderer.js"></script>
+
+
+    <div id="video_controls">
+        <button id="play">
+            <img src="https://github.com/drpanayioths/MVod/blob/main/assets/static_play.png?raw=true" id="play">
+        </button>
+        <button id="stopButton">Stop</button>
+    </div>
 </body>
 </html>
