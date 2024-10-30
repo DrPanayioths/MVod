@@ -6,13 +6,13 @@
     <style>
         body { position: absolute; top: 0; left: 0; width: 100%; height: 100%; margin: 0; padding: 0;cursor: none; }
         #cursor {
-        position: absolute;
-        background-color: black;
-        border: 3px solid rgb(255, 255, 255);
-        height: 10px;
-        width: 10px;
-        border-radius: 50%;
-        z-index: 10000;
+            position: absolute;
+            background-color: black;
+            border: 3px solid rgb(255, 255, 255);
+            height: 10px;
+            width: 10px;
+            border-radius: 50%;
+            z-index: 10000;
         }
         #videoPlayer { 
             position: absolute;
@@ -24,7 +24,6 @@
             left: 0.3%;
             z-index: 1;
             border-radius: 10px;
-            
         }
         #video_background {
             position: absolute;
@@ -41,8 +40,10 @@
         }
         #video_controls {
             position: absolute;
-            background-color: rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(5px);
+            background-color: rgba(37, 37, 37, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
             bottom: 50px;
             left: 50%;
             transform: translateX(-50%);
@@ -65,6 +66,9 @@
             transition: all 0.3s ease;
             cursor: none;
         }
+        #play img {
+            filter: invert(1) brightness(100%);
+        }
         #play:hover {
             height: 56px;
             filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.199));
@@ -83,10 +87,14 @@
             left: 12%;
             cursor: none;
         }
+        #stop img {
+            filter: invert(1) brightness(100%);
+        }
         #stop:hover {
             height: 56px;
             filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.199));
         }
+
         
     </style>
 </head>
@@ -104,7 +112,7 @@
             <img src="https://github.com/drpanayioths/MVod/blob/main/assets/static_play.png?raw=true" id="play">
         </button>
         <button id="stop" onclick="videoPlayer.pause(); audioPlayer.pause();">
-            <img src="https://github.com/drpanayioths/MVod/blob/main/assets/static_stop.png?raw=true" id="stop">
+            <img src="https://github.com/drpanayioths/MVod/blob/main/assets/static_pause.png?raw=true" id="stop">
         </button>
     </div>
 </body>
