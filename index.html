@@ -5,6 +5,13 @@
     
     <style>
         body { position: absolute; top: 0; left: 0; width: 100%; height: 100%; margin: 0; padding: 0;cursor: none; }
+        .no-select {
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            user-select: none;
+        }
+
         #cursor {
             position: fixed;
             background-color: black;
@@ -72,10 +79,16 @@
         }
         #play img {
             filter: invert(1) brightness(100%);
+            transition: none;
         }
         #play:hover {
             height: 40.5px;
             filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.199));
+        }
+        #play:hover img {
+            filter: invert(1) brightness(150%) sepia(100%) saturate(1000%) hue-rotate(120deg);
+            opacity: 0.8;
+            transition: none;
         }
 
         /* Stop Button */
@@ -93,10 +106,16 @@
         }
         #stop img {
             filter: invert(1) brightness(100%);
+            transition: none;
         }
         #stop:hover {
             height: 40.5px;
             filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.199));
+        }
+        #stop:hover img {
+            filter: invert(1) brightness(100%) sepia(100%) saturate(2000%) hue-rotate(320deg);
+            opacity: 0.8;
+            transition: none;
         }
 
         /* Progress Bar */
@@ -139,10 +158,10 @@
 
     <div id="video_controls">
         <button id="play" onclick="videoPlayer.play(); audioPlayer.play();">
-            <img src="https://github.com/drpanayioths/MVod/blob/main/assets/static_play.png?raw=true" id="play">
+            <img class="no-select" src="https://github.com/drpanayioths/MVod/blob/main/assets/static_play.png?raw=true" id="play">
         </button>
         <button id="stop" onclick="videoPlayer.pause(); audioPlayer.pause();">
-            <img src="https://github.com/drpanayioths/MVod/blob/main/assets/static_pause.png?raw=true" id="stop">
+            <img class="no-select" src="https://github.com/drpanayioths/MVod/blob/main/assets/static_pause.png?raw=true" id="stop">
         </button>
         <div id="progressbar_main">
             <div id="progressbar_progress"></div>
