@@ -33,3 +33,6 @@ progressBarContainer.addEventListener('click', (e) => {
     videoPlayer.currentTime = pos * videoPlayer.duration;
     audioPlayer.currentTime = pos * videoPlayer.duration;
 });
+
+
+// Volume Control

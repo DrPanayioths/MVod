@@ -144,7 +144,30 @@
             transition: width 0.1s linear;
         }
 
-        
+        /* Volume Menu */
+
+        #volume_menu {
+            position: absolute;
+            top: 50%;
+            right: 0.3%;
+            height: 200px;
+            width: 40px;
+            transform: translateY(-50%);
+            z-index: 2;
+        }
+
+        #volume_bar {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            right: 6px;
+            width: 7px;
+            height: 70%;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            cursor: none;
+            transition: height 0.3s ease;
+        }
     </style>
 </head>
 <body>
@@ -168,6 +191,10 @@
         </div>
     </div>
     <div id="trigger_area"></div>
+
+    <div class="no-select" id="volume_menu">
+        <div id="volume_bar"></div>
+    </div>
 
 <script>
 	const progressBar = document.getElementById('progressbar_progress');
