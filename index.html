@@ -23,15 +23,11 @@
         }
         #videoPlayer { 
             position: absolute;
-            height: 98.8%;
-            width: 99.5%;
+            height: 100%;
+            width: 100%;
             background-color: rgb(37, 37, 37);
             object-fit: cover;
-            top: 0.5%;
-            left: 50%;
-            transform: translateX(-50%);
             z-index: 1;
-            border-radius: 10px;
         }
         #video_background {
             position: absolute;
@@ -52,13 +48,13 @@
             border: 1px solid rgba(255, 255, 255, 0.1);
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             backdrop-filter: blur(10px);
-            bottom: 50px;
+            bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
             padding: 10px;
             border-radius: 20px;
-            height: 20px;
-            width: 400px;
+            height: 15px;
+            width: 300px;
             z-index: 2;
             opacity: 1;
             transition: opacity 0.3s ease;
@@ -72,8 +68,9 @@
             background-color: transparent;
             border: none; 
             top: 50%;
+            left: 5px;
             transform: translateY(-50%);
-            height: 40px;
+            height: 35px;
             transition: all 0.3s ease;
             cursor: none;
         }
@@ -82,7 +79,7 @@
             transition: none;
         }
         #play:hover {
-            height: 40.5px;
+            height: 35.4px;
             filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.199));
         }
         #play:hover img {
@@ -99,7 +96,7 @@
             border: none; 
             top: 50%;
             transform: translateY(-50%);
-            height: 40px;
+            height: 35px;
             transition: all 0.3s ease;
             left: 12%;
             cursor: none;
@@ -109,7 +106,7 @@
             transition: none;
         }
         #stop:hover {
-            height: 40.5px;
+            height: 35.4px;
             filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.199));
         }
         #stop:hover img {
