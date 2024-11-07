@@ -36,6 +36,29 @@ document.addEventListener('DOMContentLoaded', () => {
         Video_Player.currentTime = pos * Video_Player.duration;
         Audio_Player.currentTime = pos * Audio_Player.duration;
     });
+
+    // Throw Video and Audio
+    ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+        document.body.addEventListener(eventName, preventDefaults, false);
+    });
+    function preventDefaults(e) {
+        e.preventDefault();
+        e.stopPropagation();
+    }
+
+    document.body.addEventListener('drop', (e) => {
+        const file = e.dataTransfer.files[0];
+        const fileURL = URL.createObjectURL(file);
+
+        if (file.type.startsWith('audio/')) {
+            audioPlayer.src = fileURL;
+            audioPlayer.play();
+        } else if (file.type.startsWith('video/')) {
+            videoPlayer.src = fileURL;
+            videoPlayer.play();
+        }
+    });
+
 });
 
 // Custom Cursor 

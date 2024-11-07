@@ -36,12 +36,7 @@
             background-color: rgb(109, 108, 108);
         }
         #audioPlayer { display: none; }
-        #fileInput {
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            z-index: 2;
-        }
+        
         #video_controls {
             position: absolute;
             background-color: rgba(37, 37, 37, 0.3);
@@ -170,7 +165,7 @@
 <body>
     <div id="cursor"></div>
     <div id="video_background"></div>
-    <input type="file" id="fileInput" accept="audio/mp3, video/mp4">
+    <input type="file" id="fileInput" accept="audio/mp3, video/mp4" style="display: none;">
     <audio id="audioPlayer" controls></audio>
     <video id="videoPlayer"></video>
     <script src="renderer.js"></script>

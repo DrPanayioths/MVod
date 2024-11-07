@@ -6,7 +6,7 @@ function createWindow() {
         width: 1200,
         height: 500,
         autoHideMenuBar: true,
-        // frame: false,
+        frame: false,
         webPreferences: {
             preload: path.join(__dirname, 'renderer.js'),
             contextIsolation: true,
