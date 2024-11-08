@@ -2,136 +2,6 @@
 <html>
 <head>
     <title>MVods</title>
-    
-    <style>
-        body { position: absolute; top: 0; left: 0; width: 100%; height: 100%; margin: 0; padding: 0;cursor: none; }
-        .no-select { -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
-
-        #cursor {
-            position: fixed;
-            background-color: black;
-            border: 3px solid rgb(255, 255, 255);
-            height: 10px;
-            width: 10px;
-            border-radius: 50%;
-            z-index: 10000;
-        }
-        #videoPlayer { 
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            background-color: rgb(37, 37, 37);
-            object-fit: cover;
-            z-index: 1;
-        }
-        #video_background {
-            position: absolute;
-            height: 100%;
-            width: 100%;
-            background-color: rgb(109, 108, 108);
-        }
-        #audioPlayer { display: none; }
-        
-        #video_controls {
-            position: absolute;
-            background-color: rgba(37, 37, 37, 0.3);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: 10px;
-            border-radius: 20px;
-            height: 15px;
-            width: 300px;
-            z-index: 2;
-            opacity: 1;
-            transition: opacity 0.3s ease;
-        }
-
-
-        /* Play Button */
-
-        #play {
-            position: absolute;
-            background-color: transparent;
-            border: none; 
-            top: 50%;
-            left: 5px;
-            transform: translateY(-50%);
-            height: 35px;
-            transition: all 0.3s ease;
-            cursor: none;
-        }
-        #play img {
-            filter: invert(1) brightness(100%);
-            transition: none;
-        }
-        #play:hover {
-            height: 35.4px;
-            filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.199));
-        }
-        #play:hover img {
-            filter: invert(1) brightness(150%) sepia(100%) saturate(1000%) hue-rotate(120deg);
-            opacity: 0.8;
-            transition: none;
-        }
-
-        /* Stop Button */
-
-        #stop {
-            position: absolute;
-            background-color: transparent;
-            border: none; 
-            top: 50%;
-            transform: translateY(-50%);
-            height: 35px;
-            transition: all 0.3s ease;
-            left: 12%;
-            cursor: none;
-        }
-        #stop img {
-            filter: invert(1) brightness(100%);
-            transition: none;
-        }
-        #stop:hover {
-            height: 35.4px;
-            filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.199));
-        }
-        #stop:hover img {
-            filter: invert(1) brightness(100%) sepia(100%) saturate(2000%) hue-rotate(320deg);
-            opacity: 0.8;
-            transition: none;
-        }
-
-        /* Progress Bar */
-        #progressbar_main {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            right: 4%;
-            width: 70%;
-            height: 7px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 5px;
-            cursor: none;
-            transition: height 0.3s ease;
-        }
-
-        #progressbar_main:hover {
-            height: 10px;
-        }
-
-        #progressbar_progress {
-            width: 0%;
-            height: 100%;
-            background: #fff;
-            border-radius: 5px;
-            transition: width 0.1s linear;
-        }
-
-    </style>
 </head>
 <body>
     <div id="cursor"></div>
@@ -168,6 +38,146 @@
         videoPlayer.currentTime = pos * videoPlayer.duration;
     });
 </script>
-
 </body>
+
+
+
+
+
+
+
+
+
+
+
+<style>
+    body { position: absolute; top: 0; left: 0; width: 100%; height: 100%; margin: 0; padding: 0;cursor: none; }
+    .no-select { -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
+
+    #cursor {
+        position: fixed;
+        background-color: black;
+        border: 3px solid rgb(255, 255, 255);
+        height: 10px;
+        width: 10px;
+        border-radius: 50%;
+        z-index: 10000;
+    }
+    #videoPlayer { 
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: rgb(37, 37, 37);
+        object-fit: cover;
+        z-index: 1;
+    }
+    #video_background {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        background-color: rgb(109, 108, 108);
+    }
+    #audioPlayer { display: none; }
+    
+    #video_controls {
+        position: absolute;
+        background-color: rgba(37, 37, 37, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+        bottom: 20px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 10px;
+        border-radius: 20px;
+        height: 15px;
+        width: 300px;
+        z-index: 2;
+        opacity: 1;
+        transition: opacity 0.3s ease;
+    }
+
+
+    /* Play Button */
+
+    #play {
+        position: absolute;
+        background-color: transparent;
+        border: none; 
+        top: 50%;
+        left: 5px;
+        transform: translateY(-50%);
+        height: 35px;
+        transition: all 0.3s ease;
+        cursor: none;
+    }
+    #play img {
+        filter: invert(1) brightness(100%);
+        transition: none;
+    }
+    #play:hover {
+        height: 35.4px;
+        filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.199));
+    }
+    #play:hover img {
+        filter: invert(1) brightness(150%) sepia(100%) saturate(1000%) hue-rotate(120deg);
+        opacity: 0.8;
+        transition: none;
+    }
+
+    /* Stop Button */
+
+    #stop {
+        position: absolute;
+        background-color: transparent;
+        border: none; 
+        top: 50%;
+        transform: translateY(-50%);
+        height: 35px;
+        transition: all 0.3s ease;
+        left: 12%;
+        cursor: none;
+    }
+    #stop img {
+        filter: invert(1) brightness(100%);
+        transition: none;
+    }
+    #stop:hover {
+        height: 35.4px;
+        filter: drop-shadow(0 0 4px rgba(255, 255, 255, 0.199));
+    }
+    #stop:hover img {
+        filter: invert(1) brightness(100%) sepia(100%) saturate(2000%) hue-rotate(320deg);
+        opacity: 0.8;
+        transition: none;
+    }
+
+    /* Progress Bar */
+    #progressbar_main {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 4%;
+        width: 70%;
+        height: 7px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 5px;
+        cursor: none;
+        transition: height 0.3s ease;
+    }
+
+    #progressbar_main:hover {
+        height: 10px;
+    }
+
+    #progressbar_progress {
+        width: 0%;
+        height: 100%;
+        background: #fff;
+        border-radius: 5px;
+        transition: width 0.1s linear;
+    }
+
+</style>
+
 </html>

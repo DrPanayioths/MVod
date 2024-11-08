@@ -71,3 +71,11 @@ document.addEventListener('keydown', function(event){
         }
     }
 })
+
+document.addEventListener('keydown', function(event){
+    if (event.code == 'ArrowUp') {
+        if (audio.volume < 1) {
+            audio.volume = audio.volume + 0.1;
+        }
+    }
+})
