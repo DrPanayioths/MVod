@@ -24,7 +24,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const progress_bar = document.getElementById('progressbar_progress');
     const progress_frame = document.getElementById('progressbar_main');
     const Video_Player = document.getElementById('videoPlayer');
-    const Audio_Player = document.getElementById('audioPlayer');
 
     Video_Player.addEventListener('timeupdate', () => {
         const progress = (Video_Player.currentTime / Video_Player.duration) * 100;
@@ -34,10 +33,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const rect = progress_frame.getBoundingClientRect();
         const pos = (e.clientX - rect.left) / rect.width;
         Video_Player.currentTime = pos * Video_Player.duration;
-        Audio_Player.currentTime = pos * Audio_Player.duration;
     });
 
-    // Throw Video and Audio
+    // Throw Video
     ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
         document.body.addEventListener(eventName, preventDefaults, false);
     });
@@ -50,10 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const file = e.dataTransfer.files[0];
         const fileURL = URL.createObjectURL(file);
 
-        if (file.type.startsWith('audio/')) {
-            audioPlayer.src = fileURL;
-            audioPlayer.play();
-        } else if (file.type.startsWith('video/')) {
+        if (file.type.startsWith('video/')) {
             videoPlayer.src = fileURL;
             videoPlayer.play();
         }
@@ -66,3 +61,13 @@ document.addEventListener('mousemove', (e) => {
     document.getElementById('cursor').style.left = `${e.pageX}px`
     document.getElementById('cursor').style.top = `${e.pageY}px`
 });
+
+// Volume Up And Down
+document.addEventListener('keydown', function(event){
+    audio = document.getElementById("videoPlayer")
+    if (event.code == 'ArrowDown') {
+        if (audio.volume != 1.3877787807814457e-16) {
+            audio.volume = audio.volume - 0.1
+        }
+    }
+})

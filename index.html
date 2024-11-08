@@ -5,12 +5,7 @@
     
     <style>
         body { position: absolute; top: 0; left: 0; width: 100%; height: 100%; margin: 0; padding: 0;cursor: none; }
-        .no-select {
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            -ms-user-select: none;
-            user-select: none;
-        }
+        .no-select { -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; user-select: none; }
 
         #cursor {
             position: fixed;
@@ -136,56 +131,26 @@
             transition: width 0.1s linear;
         }
 
-        /* Volume Menu */
-
-        #volume_menu {
-            position: absolute;
-            top: 50%;
-            right: 0.3%;
-            height: 200px;
-            width: 40px;
-            transform: translateY(-50%);
-            z-index: 2;
-        }
-
-        #volume_bar {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            right: 6px;
-            width: 7px;
-            height: 70%;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 5px;
-            cursor: none;
-            transition: height 0.3s ease;
-        }
     </style>
 </head>
 <body>
     <div id="cursor"></div>
     <div id="video_background"></div>
     <input type="file" id="fileInput" accept="audio/mp3, video/mp4" style="display: none;">
-    <audio id="audioPlayer" controls></audio>
     <video id="videoPlayer"></video>
     <script src="renderer.js"></script>
 
 
     <div id="video_controls">
-        <button id="play" onclick="videoPlayer.play(); audioPlayer.play();">
+        <button id="play" onclick="videoPlayer.play()">
             <img class="no-select" src="https://github.com/drpanayioths/MVod/blob/main/assets/static_play.png?raw=true" id="play">
         </button>
-        <button id="stop" onclick="videoPlayer.pause(); audioPlayer.pause();">
+        <button id="stop" onclick="videoPlayer.pause()">
             <img class="no-select" src="https://github.com/drpanayioths/MVod/blob/main/assets/static_pause.png?raw=true" id="stop">
         </button>
         <div id="progressbar_main">
             <div id="progressbar_progress"></div>
         </div>
-    </div>
-    <div id="trigger_area"></div>
-
-    <div class="no-select" id="volume_menu">
-        <div id="volume_bar"></div>
     </div>
 
 <script>
@@ -201,7 +166,6 @@
 		const rect = progressBarContainer.getBoundingClientRect();
 		const pos = (e.clientX - rect.left) / rect.width;
         videoPlayer.currentTime = pos * videoPlayer.duration;
-        audioPlayer.currentTime = pos * videoPlayer.duration;
     });
 </script>
 
