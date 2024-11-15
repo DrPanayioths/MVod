@@ -67,15 +67,32 @@ document.addEventListener('keydown', function(event){
     audio = document.getElementById("videoPlayer")
     if (event.code == 'ArrowDown') {
         if (audio.volume != 1.3877787807814457e-16) {
-            audio.volume = audio.volume - 0.1
+            audio.volume = audio.volume - 0.1;
         }
     }
-})
-
+});
 document.addEventListener('keydown', function(event){
     if (event.code == 'ArrowUp') {
         if (audio.volume < 1) {
             audio.volume = audio.volume + 0.1;
         }
     }
-})
+});
+
+
+// Mute/Unmute Audio
+document.addEventListener('keydown', function(event) {
+    const video = document.getElementById("videoPlayer");
+    const volumes = parseFloat(localStorage.getItem("volumes"));
+    if (localStorage.getItem("volumes") === null) { localStorage.setItem("volumes", video.volume); }
+
+    if (event.code === "KeyM") {
+        if (video.volume > 0) {
+            video.volume = 0.0;
+            localStorage.setItem("volume", "disabled");
+        } else {
+            video.volume = volumes;
+            localStorage.setItem("volume", "enabled");
+        }
+    }
+});
